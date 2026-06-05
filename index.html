@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ótica Eliza</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="nav-logo">👓 Ótica Eliza</div>
+    <div class="nav-links">
+        <a href="#quiz-section">Fazer Quiz</a>
+        <a href="#localizacao">Localização</a>
+        <a href="https://wa.me/5581900000000" target="_blank">WhatsApp</a>
+    </div>
+</nav>
+
+<body>
+
+ <!-- HEADER -->
+    <header>
+        <h1>Ótica Eliza</h1>
+        <p>Encontre o óculos ideal para você</p>
+    </header>
+
+    <!-- SEÇÃO DO QUIZ -->
+   <!-- AVISO ANTES DO QUIZ -->
+<section id="aviso">
+    <div class="aviso-box">
+        <div class="aviso-icone">💡</div>
+        <h2>Antes de continuar...</h2>
+        <p>
+            Cada pessoa tem uma necessidade diferente. Responda algumas perguntas rápidas 
+            e descubra qual lente foi feita para o seu estilo de vida, assim nossa 
+            especialista já chega preparada para te atender do jeito certo.
+        </p>
+        <button onclick="irParaQuiz()">Continuar →</button>
+    </div>
+</section>
+
+<!-- SEÇÃO DO QUIZ -->
+<section id="quiz-section" style="display:none;">
+
+        <!-- PASSO 1 -->
+        <div class="pergunta ativa" id="p1">
+            <h2>Você já usa óculos de grau?</h2>
+            <button onclick="responder('p1', 'nao')">Não, é a primeira vez</button>
+            <button onclick="responder('p1', 'sim-pouco')">Sim, há menos de 2 anos</button>
+            <button onclick="responder('p1', 'sim-muito')">Sim, há mais de 5 anos</button>
+        </div>
+
+        <!-- PASSO 2 -->
+        <div class="pergunta" id="p2">
+            <h2>Como você usa seus óculos no dia a dia?</h2>
+            <button onclick="responder('p2', 'dia-todo')">O dia todo</button>
+            <button onclick="responder('p2', 'ler')">Só para ler</button>
+            <button onclick="responder('p2', 'longe')">Só para enxergar longe</button>
+        </div>
+
+        <!-- PASSO 3 -->
+        <div class="pergunta" id="p3">
+            <h2>Você passa muito tempo em telas?</h2>
+            <p>(celular, computador, TV)</p>
+            <button onclick="responder('p3', 'sim')">Sim, bastante</button>
+            <button onclick="responder('p3', 'nao')">Não muito</button>
+        </div>
+
+        <!-- PASSO 4 -->
+        <div class="pergunta" id="p4">
+            <h2>Você dirige ou fica exposto ao sol com frequência?</h2>
+            <button onclick="responder('p4', 'sim')">Sim</button>
+            <button onclick="responder('p4', 'nao')">Não</button>
+        </div>
+
+        <!-- RESULTADO -->
+        <div class="pergunta" id="resultado">
+            <h2>Seu perfil está pronto! 👓</h2>
+            <p id="texto-resultado"></p>
+            <a id="btn-whatsapp" href="#" target="_blank">
+                Falar com a Eliza no WhatsApp
+            </a>
+        </div>
+
+    </section>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>

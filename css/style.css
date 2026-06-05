@@ -1,0 +1,262 @@
+/* RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* HEADER */
+header {
+    background-image: linear-gradient(
+        rgba(26, 26, 46, 0.75), 
+        rgba(26, 26, 46, 0.75)
+    ),
+    url('https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=1200&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    filter: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 80px 20px;
+}
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* SEÇÃO DO QUIZ */
+#quiz-section {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px 20px;
+}
+
+/* PERGUNTAS */
+.pergunta {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeIn 0.4s ease;
+}
+
+.pergunta.ativa {
+    display: flex;
+}
+
+.pergunta h2 {
+    font-size: 1.4rem;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+}
+
+.pergunta p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: -8px;
+}
+
+/* BOTÕES DAS PERGUNTAS */
+.pergunta button {
+    background-color: white;
+    border: 2px solid #1a1a2e;
+    color: #1a1a2e;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.pergunta button:hover {
+    background-color: #1a1a2e;
+    color: white;
+}
+
+/* BOTÃO WHATSAPP */
+#btn-whatsapp {
+    display: block;
+    background-color: #25D366;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+#btn-whatsapp:hover {
+    background-color: #1ebe57;
+}
+
+/* TEXTO DO RESULTADO */
+#texto-resultado {
+    background-color: white;
+    border-left: 4px solid #1a1a2e;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVO MOBILE */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .pergunta h2 {
+        font-size: 1.2rem;
+    }
+
+    .pergunta button {
+        font-size: 0.95rem;
+    }
+}
+
+/* NAVBAR */
+nav {
+    width: 100%;
+    background-color: #1a1a2e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* MOBILE - esconde links da navbar */
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* AVISO */
+#aviso {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.aviso-box {
+    background-color: #1a1a2e;
+    color: white;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 16px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4),
+                0 0 80px rgba(99, 102, 241, 0.15);
+    animation: brilho 3s ease-in-out infinite;
+}
+
+.aviso-icone {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    animation: pulsar 2s ease-in-out infinite;
+}
+
+.aviso-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.aviso-box p {
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 28px;
+}
+
+.aviso-box button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.aviso-box button:hover {
+    background-color: #1ebe57;
+    transform: scale(1.05);
+}
+
+/* ANIMAÇÃO DE BRILHO */
+@keyframes brilho {
+    0%, 100% {
+        box-shadow: 0 0 40px rgba(99, 102, 241, 0.4),
+                    0 0 80px rgba(99, 102, 241, 0.15);
+    }
+    50% {
+        box-shadow: 0 0 60px rgba(99, 102, 241, 0.7),
+                    0 0 120px rgba(99, 102, 241, 0.3);
+    }
+}
+
+/* ANIMAÇÃO DO ÍCONE */
+@keyframes pulsar {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.2); }
+}
