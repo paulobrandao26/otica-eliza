@@ -71,16 +71,26 @@ function mostrarResultado() {
     const msgWhats = `Olá Eliza! Fiz o quiz no site e meu perfil é: *${perfil}*. ${textoFinal} Gostaria de saber mais!`;
 
     // Número da Eliza — TROCAR PELO NÚMERO REAL
-    const numero = '5581900000000';
+    const numero = '5581997607151';
 
     const link = `https://wa.me/${numero}?text=${encodeURIComponent(msgWhats)}`;
     document.getElementById('btn-whatsapp').href = link;
 
     // Mostra o resultado
     document.getElementById('resultado').classList.add('ativa');
+setTimeout(() => {
+    const contato = document.getElementById('contato-final');
+    contato.style.display = 'block';
+    contato.scrollIntoView({ behavior: 'smooth' });
+}, 800);
 }
 
 function irParaQuiz() {
+    document.getElementById('aviso').style.display = 'flex';
+    document.getElementById('aviso').scrollIntoView({ behavior: 'smooth' });
+}
+
+function continuarQuiz() {
     document.getElementById('aviso').style.display = 'none';
     document.getElementById('quiz-section').style.display = 'block';
     document.getElementById('quiz-section').scrollIntoView({ behavior: 'smooth' });

@@ -3,45 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ótica Eliza</title>
+    <title>Casa Luz Ótica</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-<!-- NAVBAR -->
-<nav>
-    <div class="nav-logo">👓 Ótica Eliza</div>
-    <div class="nav-links">
-        <a href="#quiz-section">Fazer Quiz</a>
-        <a href="#localizacao">Localização</a>
-        <a href="https://wa.me/5581900000000" target="_blank">WhatsApp</a>
-    </div>
-</nav>
-
 <body>
 
- <!-- HEADER -->
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-logo">
+            <img src="images/logo.png" alt="Casa Luz Ótica">
+        </div>
+        <div class="nav-links">
+            <a href="#" onclick="irParaQuiz()">Fazer Quiz</a>
+            <a href="#localizacao">Localização</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
     <header>
-        <h1>Ótica Eliza</h1>
-        <p>Encontre o óculos ideal para você</p>
+        <h1>Casa Luz Ótica</h1>
+        <p>A luz da sua visão</p>
+        <button class="btn-hero" onclick="irParaQuiz()">
+            Descobrir meu óculos ideal 👓
+        </button>
     </header>
 
-    <!-- SEÇÃO DO QUIZ -->
-   <!-- AVISO ANTES DO QUIZ -->
-<section id="aviso">
-    <div class="aviso-box">
-        <div class="aviso-icone">💡</div>
-        <h2>Antes de continuar...</h2>
-        <p>
-            Cada pessoa tem uma necessidade diferente. Responda algumas perguntas rápidas 
-            e descubra qual lente foi feita para o seu estilo de vida, assim nossa 
-            especialista já chega preparada para te atender do jeito certo.
-        </p>
-        <button onclick="irParaQuiz()">Continuar →</button>
-    </div>
-</section>
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais">
+        <h2>Por que escolher a Casa Luz Ótica?</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icone">🔬</div>
+                <h3>Exame Grátis</h3>
+                <p>Na compra do óculos completo</p>
+            </div>
+            <div class="card">
+                <div class="card-icone">🕶️</div>
+                <h3>Óculos de Sol Grátis</h3>
+                <p>Na compra do seu óculos de grau</p>
+            </div>
+            <div class="card">
+                <div class="card-icone">💳</div>
+                <h3>10x Sem Juros</h3>
+                <p>No cartão + 10% de desconto à vista</p>
+            </div>
+            <div class="card">
+                <div class="card-icone">👓</div>
+                <h3>Armações a partir de</h3>
+                <p>R$ 59,90</p>
+            </div>
+        </div>
+    </section>
 
-<!-- SEÇÃO DO QUIZ -->
-<section id="quiz-section" style="display:none;">
+    <!-- AVISO ANTES DO QUIZ -->
+    <section id="aviso" style="display:none;">
+        <div class="aviso-box">
+            <div class="aviso-icone">💡</div>
+            <h2>Antes de continuar...</h2>
+            <p>
+                Cada pessoa tem uma necessidade diferente. Responda algumas perguntas rápidas 
+                e descubra qual lente foi feita para o seu estilo de vida — assim nossa 
+                especialista já chega preparada para te atender do jeito certo.
+            </p>
+            <button onclick="continuarQuiz()">Continuar →</button>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DO QUIZ -->
+    <section id="quiz-section" style="display:none;">
+        <div class="quiz-chamada">
+            <p>👓 Responda as perguntas abaixo e receba o contato da nossa especialista!</p>
+        </div>
 
         <!-- PASSO 1 -->
         <div class="pergunta ativa" id="p1">
@@ -78,12 +110,45 @@
         <div class="pergunta" id="resultado">
             <h2>Seu perfil está pronto! 👓</h2>
             <p id="texto-resultado"></p>
-            <a id="btn-whatsapp" href="#" target="_blank">
-                Falar com a Eliza no WhatsApp
-            </a>
+            <div id="contato-final" style="display:none;">
+                <div class="contato-box">
+                    <h3>🎉 Parabéns! Agora você já sabe o que precisa.</h3>
+                    <p>Fale agora com nossa especialista e encontre o óculos ideal pra você!</p>
+                    <a id="btn-whatsapp" href="https://wa.me/5581997607151" target="_blank">
+                        Falar com os verdedores no WhatsApp
+                    </a>
+                </div>
+            </div>
         </div>
 
     </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section id="localizacao">
+        <h2>Onde nos encontrar</h2>
+        <div class="localizacao-box">
+            <div class="localizacao-info">
+                <p>📍 Rua Padre Ozeas Cavalcante, 23</p>
+                <p>Camaragibe — PE</p>
+               
+                <a href="https://www.google.com/maps/search/Rua+Padre+Ozeas+Cavalcante+23+Camaragibe+PE" 
+                   target="_blank" 
+                   class="btn-loc-maps">
+                    Ver no Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>👓 Casa Luz Ótica — A luz da sua visão</p>
+        <p>Rua Padre Ozeas Cavalcante, 23 — Camaragibe, PE</p>
+        <div class="footer-links">
+            <a href="#" onclick="irParaQuiz()">Fazer Quiz</a>
+        </div>
+        <p class="footer-copy">© 2025 Casa Luz Ótica. Todos os direitos reservados.</p>
+    </footer>
 
     <script src="js/quiz.js"></script>
 </body>

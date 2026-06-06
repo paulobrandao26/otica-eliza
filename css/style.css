@@ -1,3 +1,11 @@
+/* CORES DA CASA LUZ ÓTICA */
+:root {
+    --azul:        #0047AB;
+    --amarelo:     #FFD700;
+    --branco:      #FFFFFF;
+    --azul-escuro: #003080;
+}
+
 /* RESET E BASE */
 * {
     margin: 0;
@@ -7,7 +15,14 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f5f5f5;
+    background-image: linear-gradient(
+        rgba(245, 245, 245, 0.92),
+        rgba(245, 245, 245, 0.92)
+    ),
+    url('https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?w=1200&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #333;
     min-height: 100vh;
     display: flex;
@@ -15,30 +30,73 @@ body {
     align-items: center;
 }
 
+/* NAVBAR */
+nav {
+    width: 100%;
+    background-color: var(--azul);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: var(--amarelo);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
 /* HEADER */
 header {
     background-image: linear-gradient(
-        rgba(26, 26, 46, 0.75), 
-        rgba(26, 26, 46, 0.75)
+        rgba(0, 71, 171, 0.80),
+        rgba(0, 71, 171, 0.80)
     ),
     url('https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=1200&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    filter: none;
-    color: white;
+    color: var(--branco);
     width: 100%;
     text-align: center;
     padding: 80px 20px;
 }
+
 header h1 {
     font-size: 2rem;
     letter-spacing: 2px;
     margin-bottom: 8px;
+    color: var(--amarelo);
 }
 
 header p {
     font-size: 1rem;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* SEÇÃO DO QUIZ */
@@ -62,7 +120,7 @@ header p {
 
 .pergunta h2 {
     font-size: 1.4rem;
-    color: #1a1a2e;
+    color: var(--azul);
     margin-bottom: 8px;
 }
 
@@ -74,9 +132,9 @@ header p {
 
 /* BOTÕES DAS PERGUNTAS */
 .pergunta button {
-    background-color: white;
-    border: 2px solid #1a1a2e;
-    color: #1a1a2e;
+    background-color: var(--branco);
+    border: 2px solid var(--azul);
+    color: var(--azul);
     padding: 16px 20px;
     border-radius: 10px;
     font-size: 1rem;
@@ -86,15 +144,15 @@ header p {
 }
 
 .pergunta button:hover {
-    background-color: #1a1a2e;
-    color: white;
+    background-color: var(--azul);
+    color: var(--branco);
 }
 
 /* BOTÃO WHATSAPP */
 #btn-whatsapp {
     display: block;
     background-color: #25D366;
-    color: white;
+    color: var(--branco);
     text-align: center;
     padding: 18px;
     border-radius: 10px;
@@ -111,8 +169,8 @@ header p {
 
 /* TEXTO DO RESULTADO */
 #texto-resultado {
-    background-color: white;
-    border-left: 4px solid #1a1a2e;
+    background-color: var(--branco);
+    border-left: 4px solid var(--amarelo);
     padding: 16px;
     border-radius: 8px;
     font-size: 1rem;
@@ -120,90 +178,25 @@ header p {
     color: #444;
 }
 
-/* ANIMAÇÃO */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* RESPONSIVO MOBILE */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    .pergunta h2 {
-        font-size: 1.2rem;
-    }
-
-    .pergunta button {
-        font-size: 0.95rem;
-    }
-}
-
-/* NAVBAR */
-nav {
-    width: 100%;
-    background-color: #1a1a2e;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.nav-logo {
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 24px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.95rem;
-    opacity: 0.85;
-    transition: opacity 0.2s;
-}
-
-.nav-links a:hover {
-    opacity: 1;
-}
-
-/* MOBILE - esconde links da navbar */
-@media (max-width: 480px) {
-    .nav-links {
-        gap: 12px;
-        font-size: 0.8rem;
-    }
-}
-
 /* AVISO */
 #aviso {
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
+    align-items: center;
     padding: 40px 20px;
 }
 
 .aviso-box {
-    background-color: #1a1a2e;
-    color: white;
+    background-color: var(--azul);
+    color: var(--branco);
     max-width: 600px;
     width: 100%;
     border-radius: 16px;
     padding: 40px 32px;
     text-align: center;
-    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4),
-                0 0 80px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 0 40px rgba(0, 71, 171, 0.4),
+                0 0 80px rgba(0, 71, 171, 0.15);
     animation: brilho 3s ease-in-out infinite;
 }
 
@@ -217,6 +210,7 @@ nav {
     font-size: 1.5rem;
     margin-bottom: 16px;
     letter-spacing: 1px;
+    color: var(--amarelo);
 }
 
 .aviso-box p {
@@ -227,8 +221,8 @@ nav {
 }
 
 .aviso-box button {
-    background-color: #25D366;
-    color: white;
+    background-color: var(--amarelo);
+    color: var(--azul);
     border: none;
     padding: 16px 40px;
     border-radius: 10px;
@@ -239,19 +233,19 @@ nav {
 }
 
 .aviso-box button:hover {
-    background-color: #1ebe57;
+    background-color: #e6c200;
     transform: scale(1.05);
 }
 
 /* ANIMAÇÃO DE BRILHO */
 @keyframes brilho {
     0%, 100% {
-        box-shadow: 0 0 40px rgba(99, 102, 241, 0.4),
-                    0 0 80px rgba(99, 102, 241, 0.15);
+        box-shadow: 0 0 40px rgba(0, 71, 171, 0.4),
+                    0 0 80px rgba(0, 71, 171, 0.15);
     }
     50% {
-        box-shadow: 0 0 60px rgba(99, 102, 241, 0.7),
-                    0 0 120px rgba(99, 102, 241, 0.3);
+        box-shadow: 0 0 60px rgba(0, 71, 171, 0.7),
+                    0 0 120px rgba(0, 71, 171, 0.3);
     }
 }
 
@@ -259,4 +253,246 @@ nav {
 @keyframes pulsar {
     0%, 100% { transform: scale(1); }
     50%       { transform: scale(1.2); }
+}
+
+/* ANIMAÇÃO GERAL */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVO MOBILE */
+@media (max-width: 480px) {
+    nav {
+        padding: 16px 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .pergunta h2 {
+        font-size: 1.2rem;
+    }
+
+    .pergunta button {
+        font-size: 0.95rem;
+    }
+}
+
+/* DIFERENCIAIS */
+#diferenciais {
+    width: 100%;
+    max-width: 900px;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#diferenciais h2 {
+    font-size: 1.6rem;
+    color: var(--azul);
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--branco);
+    border-radius: 16px;
+    padding: 28px 20px;
+    box-shadow: 0 4px 20px rgba(0, 71, 171, 0.1);
+    transition: transform 0.2s ease;
+    border-top: 4px solid var(--amarelo);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-icone {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 1rem;
+    color: var(--azul);
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* RESPONSIVO MOBILE - CARDS */
+@media (max-width: 480px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* LOCALIZAÇÃO */
+#localizacao {
+    width: 100%;
+    max-width: 900px;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#localizacao h2 {
+    font-size: 1.6rem;
+    color: var(--azul);
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.localizacao-box {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+.localizacao-info {
+    background-color: var(--branco);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(0, 71, 171, 0.1);
+    border-top: 4px solid var(--amarelo);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.localizacao-info p {
+    color: #444;
+    font-size: 1rem;
+}
+
+.btn-loc-whats {
+    display: block;
+    background-color: #25D366;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 12px;
+    transition: background-color 0.2s;
+}
+
+.btn-loc-whats:hover {
+    background-color: #1ebe57;
+}
+
+.btn-loc-maps {
+    display: block;
+    background-color: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-loc-maps:hover {
+    background-color: var(--azul-escuro);
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    background-color: var(--azul);
+    color: var(--branco);
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 8px 0;
+}
+
+.footer-links a {
+    color: var(--amarelo);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 8px;
+}
+
+/* RESPONSIVO MOBILE - LOCALIZAÇÃO */
+@media (max-width: 480px) {
+    .localizacao-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* BOTÃO HERO */
+.btn-hero {
+    margin-top: 24px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    animation: pulsar 2s ease-in-out infinite;
+}
+
+.btn-hero:hover {
+    background-color: #1ebe57;
+    transform: scale(1.05);
+}
+
+/* CONTATO FINAL */
+.contato-box {
+    background-color: var(--azul);
+    color: var(--branco);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeIn 0.6s ease;
+}
+
+.contato-box h3 {
+    font-size: 1.2rem;
+    color: var(--amarelo);
+    margin-bottom: 10px;
+}
+
+.contato-box p {
+    font-size: 0.95rem;
+    color: var(--branco);
+    opacity: 1;
+    margin-bottom: 20px;
 }
